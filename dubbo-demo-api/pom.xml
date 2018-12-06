@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dubbo-demo-parent</artifactId>
+        <groupId>com.yifei</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dubbo-demo-api</artifactId>
+
+    <build>
+        <!-- 产生的构建文件名，默认值是${project.artifactId}-${project.version} -->
+        <finalName>${project.artifactId}-${project.version}</finalName>
+
+        <!--构建产生的所有文件存放的目录-->
+        <directory>../output/${project.artifactId}</directory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <delete dir="${project.build.directory}/antrun"/>
+                                <delete dir="${project.build.directory}/archive-tmp"/>
+                                <delete dir="${project.build.directory}/classes"/>
+                                <delete dir="${project.build.directory}/test-classes"/>
+                                <delete dir="${project.build.directory}/maven-archiver"/>
+                                <delete dir="${project.build.directory}/generated-sources"/>
+                                <delete dir="${project.build.directory}/generated-test-sources"/>
+                                <delete dir="${project.build.directory}/maven-status"/>
+                                <delete dir="${project.build.directory}/${project.build.finalName}"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- 配置 运行mvn install时跳过Test -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+
+            <!--指定maven插件编译版本-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>utf-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- 解决资源文件的编码问题 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 打印sql语句 ：打印方式：SLF4J | LOG4J | LOG4J2 | JDK_LOGGING | COMMONS_LOGGING | STDOUT_LOGGING | NO_LOGGING-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!-- mapper已经在spring-mybatis.xml中的sqlSessionFactory配置，这里不再需要配置 -->
+    <!-- <mappers>
+		<mapper resource="com/yifei/dubbo/demo/provider/mapping/**/*Mapper.xml" />
+	</mappers> -->
+</configuration>
