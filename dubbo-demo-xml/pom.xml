@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dubbo-demo-parent</artifactId>
+        <groupId>com.yifei.dubbo</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dubbo-demo-xml</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>dubbo-demo-xml-provider</module>
+        <module>dubbo-demo-xml-consumer</module>
+        <module>dubbo-demo-xml-web-provider</module>
+        <module>dubbo-demo-xml-web-consumer</module>
+    </modules>
+
+    <properties>
+        <!--指定具体编码方式-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <logback-classic.version>1.2.3</logback-classic.version>
+        <dubbo.version>2.7.1</dubbo.version>
+        <curator.version>4.0.1</curator.version>
+        <dubbo-demo-api.version>${project.version}</dubbo-demo-api.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--logback日志-->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback-classic.version}</version>
+            </dependency>
+            <!--dubbo-->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <!--zookeeper客户端-->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <!--二方库 start-->
+            <dependency>
+                <groupId>com.yifei.dubbo</groupId>
+                <artifactId>dubbo-demo-api</artifactId>
+                <version>${dubbo-demo-api.version}</version>
+            </dependency>
+            <!--二方库 end-->
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <!--插件管理-->
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>1.8</version>
+                    <executions>
+                        <execution>
+                            <phase>install</phase>
+                            <goals>
+                                <goal>run</goal>
+                            </goals>
+                            <configuration>
+                                <target>
+                                    <delete dir="${project.build.directory}/antrun"/>
+                                    <delete dir="${project.build.directory}/archive-tmp"/>
+                                    <delete dir="${project.build.directory}/classes"/>
+                                    <delete dir="${project.build.directory}/test-classes"/>
+                                    <delete dir="${project.build.directory}/maven-archiver"/>
+                                    <delete dir="${project.build.directory}/generated-sources"/>
+                                    <delete dir="${project.build.directory}/generated-test-sources"/>
+                                    <delete dir="${project.build.directory}/maven-status"/>
+                                    <delete dir="${project.build.directory}/${project.build.finalName}"/>
+                                </target>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- 配置 运行mvn install时跳过Test -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.21.0</version>
+                    <configuration>
+                        <skipTests>true</skipTests>
+                    </configuration>
+                </plugin>
+
+                <!--指定maven插件编译版本-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <encoding>utf-8</encoding>
+                    </configuration>
+                </plugin>
+
+                <!-- 解决资源文件的编码问题 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

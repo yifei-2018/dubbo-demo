@@ -9,13 +9,8 @@ package com.yifei.dubbo.demo.api.constant;
 public class CmnConstant {
 
     /**
-     * 默认中文名称
+     * 默认用户id
      */
-    public static final String DEFAULT_NAME_CN = "毅飞";
-
-    /**
-     * 默认英文名称
-     */
-    public static final String DEFAULT_NAME_EN = "yifei";
+    public static final String DEFAULT_USER_ID = "yifei";
 
 }

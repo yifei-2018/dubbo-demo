@@ -1,9 +1,0 @@
-# Log Files
-/logs/
-*.log
-
-# About IntelliJ
-*.iml
-/.idea/
-/output/
-/target/
