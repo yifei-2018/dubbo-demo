@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>demo-xml-provider</artifactId>
+    <artifactId>dubbo-demo-xml-provider</artifactId>
 
     <properties>
         <!--指定具体编码方式-->

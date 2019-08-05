@@ -15,35 +15,15 @@
     <properties>
         <!--指定具体编码方式-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-mvc.version>5.1.8.RELEASE</spring-mvc.version>
+        <spring.version>4.3.11.RELEASE</spring.version>
     </properties>
 
     <dependencies>
         <!--spring-webmvc-->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-            <version>4.3.11.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-expression</artifactId>
-            <version>4.3.11.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${spring-mvc.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>spring-beans</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-expression</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-            </exclusions>
+            <version>${spring.version}</version>
         </dependency>
 
         <!--logback日志-->
