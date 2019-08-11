@@ -1,0 +1,30 @@
+spring:
+  application:
+    # 应用名称
+    name: springbootDubboProvider
+
+# tomcat配置
+server:
+  # tomcat端口，默认8080，0则随机端口
+  port: 8081
+  servlet:
+    context-path: /
+#
+## dubbo配置
+#dubbo:
+#  application:
+#    # dubbo提供者名称
+#    name: springbootDubboProvider
+#  registry:
+#    # 注册中心协议
+#    protocol: zookeeper
+#    # 注册中心地址，默认端口2181
+#    address: 127.0.0.1:2181
+#  protocol:
+#    # dubbo暴露服务的协议
+#    name: dubbo
+#    # dubbo暴露服务的端口，默认20880
+#    port: 20880
+#  scan:
+#    # 扫描含dubbo的@Service注解的包
+#    base-packages: com.yifei.dubbo.demo.provider.impl

@@ -11,6 +11,7 @@
     <modules>
         <module>dubbo-demo-api</module>
         <module>dubbo-demo-xml</module>
+        <module>dubbo-demo-springboot</module>
     </modules>
 
     <properties>
