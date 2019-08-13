@@ -14,7 +14,6 @@
     <modules>
         <module>dubbo-demo-springboot-provider</module>
         <module>dubbo-demo-springboot-consumer</module>
-        <module>springboot-test</module>
     </modules>
 
     <properties>
@@ -23,7 +22,7 @@
         <!--springboot版本号-->
         <springboot.version>2.1.3.RELEASE</springboot.version>
         <dubbo.version>2.7.1</dubbo.version>
-        <logback-classic.version>1.2.3</logback-classic.version>
+        <curator.version>4.1.0</curator.version>
         <dubbo-demo-api.version>${project.version}</dubbo-demo-api.version>
     </properties>
 
@@ -47,11 +46,11 @@
                 <artifactId>dubbo</artifactId>
                 <version>${dubbo.version}</version>
             </dependency>
-            <!--logback日志-->
+            <!--zookeeper客户端-->
             <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>${logback-classic.version}</version>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
             </dependency>
             <!--二方库 start-->
             <dependency>
