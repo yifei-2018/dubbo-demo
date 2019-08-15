@@ -26,5 +26,5 @@ dubbo:
     # dubbo暴露服务的端口，默认20880
     port: 20880
   scan:
-    # 扫描含dubbo注解(如：@Service)的包
+    # 扫描含dubbo注解(如：@Service)的包,多值以逗号（,）分隔
     base-packages: com.yifei.dubbo.demo.provider.impl
