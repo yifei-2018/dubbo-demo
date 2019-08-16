@@ -112,57 +112,25 @@
             </plugin>
 
             <!--assembly插件-->
-            <!--<plugin>-->
-            <!--<groupId>org.apache.maven.plugins</groupId>-->
-            <!--<artifactId>maven-assembly-plugin</artifactId>-->
-            <!--<version>3.1.0</version>-->
-            <!--<executions>-->
-            <!--&lt;!&ndash;开发环境&ndash;&gt;-->
-            <!--<execution>-->
-            <!--<id>make-assembly-dev</id>-->
-            <!--<phase>package</phase>-->
-            <!--<goals>-->
-            <!--<goal>single</goal>-->
-            <!--</goals>-->
-            <!--<configuration>-->
-            <!--<skipAssembly>${dev.skipAssembly}</skipAssembly>-->
-            <!--<descriptors>-->
-            <!--&lt;!&ndash;加载指定的assembly配置文件&ndash;&gt;-->
-            <!--<descriptor>src/main/assembly/assembly.xml</descriptor>-->
-            <!--</descriptors>-->
-            <!--</configuration>-->
-            <!--</execution>-->
-            <!--&lt;!&ndash;测试环境&ndash;&gt;-->
-            <!--<execution>-->
-            <!--<id>make-assembly-test</id>-->
-            <!--<phase>package</phase>-->
-            <!--<goals>-->
-            <!--<goal>single</goal>-->
-            <!--</goals>-->
-            <!--<configuration>-->
-            <!--<skipAssembly>${test.skipAssembly}</skipAssembly>-->
-            <!--<descriptors>-->
-            <!--&lt;!&ndash;加载指定的assembly配置文件&ndash;&gt;-->
-            <!--<descriptor>src/main/assembly/assembly.xml</descriptor>-->
-            <!--</descriptors>-->
-            <!--</configuration>-->
-            <!--</execution>-->
-            <!--&lt;!&ndash;生产环境&ndash;&gt;-->
-            <!--<execution>-->
-            <!--<id>make-assembly-prod</id>-->
-            <!--<phase>package</phase>-->
-            <!--<goals>-->
-            <!--<goal>single</goal>-->
-            <!--</goals>-->
-            <!--<configuration>-->
-            <!--<skipAssembly>${prod.skipAssembly}</skipAssembly>-->
-            <!--<descriptors>-->
-            <!--<descriptor>src/main/assembly/assembly.xml</descriptor>-->
-            <!--</descriptors>-->
-            <!--</configuration>-->
-            <!--</execution>-->
-            <!--</executions>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/assembly/assembly.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
 
         <!--将指定目录作为resources目录-->
@@ -178,6 +146,9 @@
             </resource>
             <resource>
                 <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/assembly/conf</directory>
             </resource>
         </resources>
     </build>

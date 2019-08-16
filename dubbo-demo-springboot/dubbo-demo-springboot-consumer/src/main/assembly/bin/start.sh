@@ -21,7 +21,7 @@ readonly LOGS_DIR
 STD_OUT_FILE=${LOGS_DIR}/stdout.log
 readonly STD_OUT_FILE
 # 启动类
-START_CLASS="com.yifei.dubbo.demo.provider.ProviderApplication"
+START_CLASS="com.yifei.dubbo.demo.consumer.ConsumerApplication"
 readonly START_CLASS
 
 # 判断服务是否已启动
