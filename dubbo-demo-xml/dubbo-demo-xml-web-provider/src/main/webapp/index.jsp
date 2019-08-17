@@ -2,6 +2,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>Hello,dubbo provider starts successfully!</h2>
 </body>
 </html>
