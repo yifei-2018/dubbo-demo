@@ -14,7 +14,7 @@
     <properties>
         <!--指定具体编码方式-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <zookeeper.version>3.4.12</zookeeper.version>
+        <zookeeper.version>3.4.14</zookeeper.version>
     </properties>
 
     <dependencies>
