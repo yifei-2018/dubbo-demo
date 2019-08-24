@@ -4,9 +4,9 @@
     <property name="LOG_PATTERN"
               value="%-5level [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %logger{50}.%method:%line - %msg%n"/>
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-    <property name="LOG_HOME" value="logs/dubbo-demo-springboot-provider"/>
+    <property name="LOG_HOME" value="logs/dubbo-demo-springboot-xml-consumer"/>
     <!--定义应用名称-->
-    <property name="APP_NAME" value="dubboDemoSpringbootProvider"/>
+    <property name="APP_NAME" value="dubboDemoSpringbootXmlConsumer"/>
     <!--定义日志类型-打点（desc）-->
     <property name="LOG_TYPE_DESC" value="run"/>
     <!--定义日志类型-访问（visit）-->

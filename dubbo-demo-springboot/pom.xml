@@ -12,8 +12,10 @@
     <artifactId>dubbo-demo-springboot</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>dubbo-demo-springboot-provider</module>
-        <module>dubbo-demo-springboot-consumer</module>
+        <module>dubbo-demo-springboot-annotation-provider</module>
+        <module>dubbo-demo-springboot-annotation-consumer</module>
+        <module>dubbo-demo-springboot-xml-provider</module>
+        <module>dubbo-demo-springboot-xml-consumer</module>
     </modules>
 
     <properties>
