@@ -20,11 +20,6 @@ dubbo:
     protocol: zookeeper
     # 注册中心地址，默认端口2181
     address: 127.0.0.1:2181
-  protocol:
-    # dubbo暴露服务的协议
-    name: dubbo
-    # dubbo暴露服务的端口，默认20880
-    port: 20880
   scan:
     # 扫描含dubbo注解(如：@Reference)的包,多值以逗号（,）分隔
     base-packages: com.yifei.dubbo.demo.controller

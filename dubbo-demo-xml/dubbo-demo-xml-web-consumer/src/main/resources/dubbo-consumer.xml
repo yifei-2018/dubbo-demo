@@ -24,8 +24,6 @@
     <dubbo:application name="dubbo-demo-xml-consumer"/>
     <!--注册中心，暴露服务地址-->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
-    <!--协议，暴露服务-->
-    <dubbo:protocol name="dubbo" port="20880"/>
 
     <!--声明StudyService接口-->
     <dubbo:reference id="studyService" interface="com.yifei.dubbo.demo.api.service.StudyService" check="false"/>
