@@ -39,7 +39,7 @@
         </dependency>
         <!--Curator 4.*.*十分依赖Zookeeper3.5.*服务版本-->
         <!--Curator 4.*.*在软兼容模式下支持Zookeeper3.4.*服务版本，但需排除自身zookeeper依赖，同时必须加入Zookeeper3.4.*的依赖（软兼容模式，一些3.4.*不具备的新特性是不能使用的）-->
-        <!--Curator2.*.*是支持Zookeeper3.4.*服务版本-->
+        <!--Curator 2.*.*是支持Zookeeper3.4.*服务版本-->
         <!--zk客户端-->
         <dependency>
             <groupId>org.apache.curator</groupId>
