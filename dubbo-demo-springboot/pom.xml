@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--springboot版本号-->
         <springboot.version>2.1.3.RELEASE</springboot.version>
-        <dubbo.version>2.7.1</dubbo.version>
+        <dubbo.version>2.7.15</dubbo.version>
         <curator.version>4.1.0</curator.version>
         <dubbo-demo-api.version>${project.version}</dubbo-demo-api.version>
     </properties>
